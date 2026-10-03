@@ -68,8 +68,13 @@ export default function Skills() {
         return;
       }
 
-      setMessage("Your volunteer profile has been created.");
+      localStorage.setItem(
+        "campaign-action-hub-volunteer-id",
+        result.id,
+      );
+
       reset();
+      window.location.href = "/opportunities";
     } finally {
       setSaving(false);
     }
